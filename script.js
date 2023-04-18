@@ -1,5 +1,8 @@
 // Remember, we're gonna use strict mode in all scripts now!
-'use strict';
+/* eslint-disable no-console */
+/* eslint-disable no-continue */
+/* eslint-disable no-plusplus */
+/* eslint-disable func-names */
 
 const calcAge = (birthYear) => 2023 - birthYear;
 
@@ -21,7 +24,8 @@ console.log(calcAge(1975));
 
 // -- How to compute max and min temperatures?
 // --Whats sensor error? And what to do?
-// Answer: any temperature that is not a number, we just need to ignore it and continue with numbers.
+// Answer: any temperature that is not a number, we just need to
+// ignore it and continue with numbers.
 
 // Step 2. Breaking the problem into sub-problems.
 // --How to ignore erros?
@@ -29,7 +33,7 @@ console.log(calcAge(1975));
 // --Find min value in temp array
 // --Subtract min value from max value (amplitude)  and  return it.
 
-//Solution.
+// Solution.
 
 const temperatures = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
 
