@@ -88,3 +88,57 @@ const calcTempAmplitudeNew = function (t1, t2) {
 };
 const amplitudeNew = calcTempAmplitudeNew([3, 5, 1], [9, 0, 5]);
 console.log(amplitudeNew);
+
+//Debugging (fixing Errors).
+
+//Debugging with console and breakpoints.
+// Software bug is a defect or problem in a computer program, basically, any unexpected or unintended
+// behavious of a computer program is a software bug.
+
+//Exampls.
+// Let make a function that prompt  for measurement in Degre celcius and
+// process it in kelvin, and debog it using console.
+
+const measureKelvin = function () {
+  const measurement = {
+    type: 'temp',
+    unit: 'celsius',
+    //value: Number(prompt('Degree celsius:')), // We will fix the bug here by converting the value to number.
+    value: 10,
+  };
+  // console.log(measurement);
+  // console.table(measurement);
+
+  // console.log(typeof measurement.value); //B we find the bug here, the typeof measurement.value os string, thats the bug.
+  // console.warn(measurement.value);
+  // console.error(measurement.value);
+
+  const kelvin = measurement.value + 273;
+  return kelvin;
+};
+
+//We have identify a bug here, the result of the kelvin when input 10 degree
+//celsius suppose to be 283, but it showing 1073 on console.
+console.log(measureKelvin()); //A. Identify Bug.
+
+//Example2.
+const calcTempAmplitudeBug = function (t1, t2) {
+  const temps = t1.concat(t2);
+  console.log(temps);
+
+  let max = 0;
+  let min = 0;
+
+  for (let i = 0; i < temps.length; i++) {
+    const currTemp = temps[i];
+    if (currTemp === 'string') continue;
+
+    debugger; //calling debugger here will open developer tools for you to begug the code.
+    if (currTemp > max) max = currTemp;
+    if (currTemp < min) min = currTemp;
+  }
+  console.log(max, min);
+  return max - min;
+};
+const amplitudeBug = calcTempAmplitudeBug([3, 5, 1], [9, 0, 5]);
+console.log(amplitudeBug);
