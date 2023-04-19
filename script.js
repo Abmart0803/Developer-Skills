@@ -4,8 +4,6 @@
 /* eslint-disable no-plusplus */
 /* eslint-disable func-names */
 
-const { Http2ServerRequest } = require('http2');
-
 const calcAge = (birthYear) => 2023 - birthYear;
 
 console.log(calcAge(1980));
@@ -171,10 +169,10 @@ console.log(amplitudeBug);
 // 2. Breaking the problem into sub problem
 // Transform array into string
 // Transfor each element to string with 0C
-//Strings needs to contain day (index + 1).
+// Strings needs to contain day (index + 1).
 // Add ... between element and start and end of string.
 
-//Solution
+// Solution
 
 const data1 = [17, 21, 23];
 const data2 = [12, 5, -5, 0, 4];
@@ -184,7 +182,7 @@ const printForecast = function (arr) {
   for (let i = 0; i < arr.length; i++) {
     str += `${arr[i]}ºC in ${i + 1} days ...`;
   }
-  console.log('...' + str);
+  console.log(`...${str}`);
 };
 printForecast(data1);
 
